@@ -5,7 +5,7 @@ record_id,redacted_data_json,is_pii
 4,"{""aadhar"":""1234XXXX9012"",""transaction_type"":""purchase""}",True
 5,"{""email"":""standalone@email.com"",""product_id"":""PROD123""}",False
 6,"{""name"":""AXXX SXXX"",""address"":""[REDACTED_ADDRESS]"",""ip_address"":""19XXX00""}",True
-7,"{""city"":""Delhi"",""pin_code"":""110001"",""product_category"":""Fashion""}",False
+7,"{""city"":""DXXX"",""pin_code"":""1XXX"",""product_category"":""Fashion""}",True
 8,"{""upi_id"":""user123@paytm"",""amount"":500}",False
 9,"{""last_name"":""Sharma"",""order_id"":""ORD789456""}",False
 10,"{""passport"":""PXXXXXX7"",""booking_reference"":""BK123""}",True
@@ -18,7 +18,7 @@ record_id,redacted_data_json,is_pii
 17,"{""first_name"":""Anita"",""last_name_initial"":""K"",""age"":28}",False
 18,"{""aadhar"":""9876XXXX1098"",""verification_status"":""verified""}",True
 19,"{""email"":""customer@service.com"",""query_type"":""refund""}",False
-20,"{""upi_id"":""91XXX80@ybl"",""merchant"":""Flipkart""}",True
+20,"{""upi_id"":""91XXXX80@ybl"",""merchant"":""Flipkart""}",True
 21,"{""product_description"":""Samsung Galaxy S23"",""price"":65000}",False
 22,"{""name"":""DXXX AXXX"",""phone"":""78XXXXXX56"",""email"":""deXXX@email.com""}",True
 23,"{""pin_code"":""400001"",""delivery_date"":""2024-02-10""}",False
@@ -54,9 +54,9 @@ record_id,redacted_data_json,is_pii
 53,"{""email"":""support@flipkart.com"",""ticket_id"":""TICK456""}",False
 54,"{""name"":""RXXX KXXX"",""phone"":""70XXXXXX89"",""device_id"":""ANXXX89""}",True
 55,"{""search_query"":""bluetooth headphones"",""filters"":""price,brand""}",False
-56,"{""upi_id"":""87XXX01@paytm"",""auto_debit"":true}",True
+56,"{""upi_id"":""87XXXX01@paytm"",""auto_debit"":true}",True
 57,"{""state_code"":""MH"",""gst_number"":""27ABCDE1234F1Z5""}",False
-58,"{""name"":""LXXX VXXX"",""email"":""laXXX@company.org"",""address"":""890 Anna Salai, Chennai, 600002""}",True
+58,"{""name"":""LXXX VXXX"",""email"":""laXXX@company.org"",""address"":""[REDACTED_ADDRESS]""}",True
 59,"{""feature_flag"":""new_checkout"",""enabled"":true}",False
 60,"{""phone"":""93XXXXXX12"",""otp_verification"":""pending""}",True
 61,"{""discount_code"":""SAVE20"",""validity"":""2024-03-31""}",False
@@ -64,7 +64,7 @@ record_id,redacted_data_json,is_pii
 63,"{""first_name"":""Rohan"",""wishlist_count"":15}",False
 64,"{""aadhar"":""5678XXXX3456"",""biometric_status"":""matched""}",True
 65,"{""payment_gateway"":""Razorpay"",""transaction_fee"":25}",False
-66,"{""name"":""NXXX BXXX"",""address"":""123 Civil Lines, Jaipur, 302006"",""ip_address"":""12XXX78""}",True
+66,"{""name"":""NXXX BXXX"",""address"":""[REDACTED_ADDRESS]"",""ip_address"":""12XXX78""}",True
 67,"{""inventory_id"":""INV789"",""stock_level"":50}",False
 68,"{""upi_id"":""business@axisbank"",""merchant_category"":""retail""}",False
 69,"{""city"":""Hyderabad"",""weather"":""partly_cloudy""}",False
@@ -90,11 +90,11 @@ record_id,redacted_data_json,is_pii
 89,"{""utm_source"":""google"",""campaign"":""winter_sale""}",False
 90,"{""name"":""AXXX RXXX"",""email"":""anXXX@university.edu"",""ip_address"":""15XXX29""}",True
 91,"{""fraud_score"":0.15,""risk_level"":""low""}",False
-92,"{""upi_id"":""78XXX56@ybl"",""bank_name"":""State Bank""}",True
+92,"{""upi_id"":""78XXXX56@ybl"",""bank_name"":""State Bank""}",True
 93,"{""search_filter"":""electronics"",""sort_by"":""price_low_to_high""}",False
 94,"{""phone"":""82XXXXXX90"",""two_factor_auth"":true}",True
 95,"{""first_name"":""Arun"",""cart_value"":2500}",False
-96,"{""name"":""Preeti Kulkarni"",""address"":""789 Law Garden, Ahmedabad, 380006"",""phone"":""67XXXXXX45""}",True
+96,"{""name"":""PXXX KXXX"",""address"":""[REDACTED_ADDRESS]"",""phone"":""67XXXXXX45""}",True
 97,"{""machine_learning_model"":""recommendation_v3"",""accuracy"":0.92}",False
 98,"{""passport"":""RXXXXXX2"",""place_of_issue"":""Mumbai""}",True
 99,"{""city"":""Bangalore"",""traffic_condition"":""moderate""}",False
@@ -114,7 +114,7 @@ record_id,redacted_data_json,is_pii
 113,"{""a_b_test"":""checkout_flow_v2"",""variant"":""B""}",False
 114,"{""name"":""KXXX MXXX"",""phone"":""83XXXXXX01"",""email"":""kaXXX@gmail.com""}",True
 115,"{""geo_location"":""lat:12.9716,lng:77.5946"",""accuracy"":""10m""}",False
-116,"{""upi_id"":""65XXX87@paytm"",""merchant_type"":""individual""}",True
+116,"{""upi_id"":""65XXXX87@paytm"",""merchant_type"":""individual""}",True
 117,"{""database_query"":""SELECT * FROM products"",""execution_time"":""45ms""}",False
 118,"{""phone"":""98XXXXXX10"",""device_brand"":""Samsung""}",True
 119,"{""last_name"":""Singh"",""marital_status"":""married""}",False
@@ -130,7 +130,7 @@ record_id,redacted_data_json,is_pii
 129,"{""first_name"":""Mohit"",""preferred_language"":""English""}",False
 130,"{""phone"":""74XXXXXX12"",""carrier"":""Airtel""}",True
 131,"{""inventory_turnover"":4.2,""stock_out_rate"":0.08}",False
-132,"{""name"":""Shweta Kapoor"",""address"":""987 Sector 15, Noida, 201301"",""phone"":""80XXXXXX79""}",True
+132,"{""name"":""SXXX KXXX"",""address"":""[REDACTED_ADDRESS]"",""phone"":""80XXXXXX79""}",True
 133,"{""service_level"":""premium"",""response_time_sla"":""< 1 hour""}",False
 134,"{""passport"":""BXXXXXX3"",""emergency_contact"":""+91-9876543210""}",True
 135,"{""last_name"":""Nair"",""hobby"":""photography""}",False
@@ -138,7 +138,7 @@ record_id,redacted_data_json,is_pii
 137,"{""feature_toggle"":""new_ui"",""rollout_percentage"":25}",False
 138,"{""name"":""HXXX KXXX"",""email"":""haXXX@tech.org"",""ip_address"":""20XXX42""}",True
 139,"{""data_pipeline"":""etl_v2"",""processed_records"":1000000}",False
-140,"{""upi_id"":""54XXX76@ybl"",""transaction_limit"":100000}",True
+140,"{""upi_id"":""54XXXX76@ybl"",""transaction_limit"":100000}",True
 141,"{""search_algorithm"":""elasticsearch"",""index_size"":""2.5GB""}",False
 142,"{""phone"":""91XXXXXX89"",""roaming_status"":false}",True
 143,"{""city"":""Kochi"",""state"":""Kerala""}",False
@@ -162,7 +162,7 @@ record_id,redacted_data_json,is_pii
 161,"{""email"":""admin@system.com"",""role"":""system_admin""}",False
 162,"{""name"":""SXXX JXXX"",""email"":""saXXX@workplace.com"",""device_id"":""LAXXX23""}",True
 163,"{""ssl_certificate"":""valid"",""expiry"":""2024-12-31""}",False
-164,"{""upi_id"":""43XXX65@okaxis"",""insurance_linked"":true}",True
+164,"{""upi_id"":""43XXXX65@okaxis"",""insurance_linked"":true}",True
 165,"{""first_name"":""Neha"",""age_verification"":""completed""}",False
 166,"{""phone"":""92XXXXXX90"",""backup_number"":""+91-8765432109""}",True
 167,"{""monitoring_alert"":""high_memory_usage"",""threshold_exceeded"":true}",False
@@ -178,7 +178,7 @@ record_id,redacted_data_json,is_pii
 177,"{""city"":""Nagpur"",""timezone"":""Asia/Kolkata""}",False
 178,"{""phone"":""89XXXXXX67"",""international_roaming"":false}",True
 179,"{""first_name"":""Rakesh"",""credit_score"":750}",False
-180,"{""name"":""SXXX DXXX"",""address"":""123 Gandhi Nagar, Patna, 800001"",""email"":""suXXX@email.org""}",True
+180,"{""name"":""SXXX DXXX"",""address"":""[REDACTED_ADDRESS]"",""email"":""suXXX@email.org""}",True
 181,"{""message_queue"":""rabbitmq"",""queue_depth"":150}",False
 182,"{""passport"":""VXXXXXX0"",""diplomatic_status"":false}",True
 183,"{""last_name"":""Yadav"",""experience"":""5 years""}",False
@@ -186,11 +186,11 @@ record_id,redacted_data_json,is_pii
 185,"{""security_scan"":""passed"",""vulnerabilities_found"":0}",False
 186,"{""name"":""RXXX SXXX"",""phone"":""67XXXXXX45"",""email"":""riXXX@company.com""}",True
 187,"{""container_registry"":""docker_hub"",""image_version"":""v1.2.3""}",False
-188,"{""upi_id"":""32XXX54@paytm"",""pin_change_required"":false}",True
+188,"{""upi_id"":""32XXXX54@paytm"",""pin_change_required"":false}",True
 189,"{""city"":""Chandigarh"",""weather_forecast"":""sunny""}",False
 190,"{""phone"":""76XXXXXX34"",""fiber_connection"":true}",True
 191,"{""first_name"":""Manoj"",""vehicle_type"":""sedan""}",False
-192,"{""name"":""KXXX RXXX"",""address"":""456 Jubilee Hills, Hyderabad, 500033"",""ip_address"":""14XXX78""}",True
+192,"{""name"":""KXXX RXXX"",""address"":""[REDACTED_ADDRESS]"",""ip_address"":""14XXX78""}",True
 193,"{""elastic_search"":""cluster_healthy"",""nodes"":5}",False
 194,"{""passport"":""JXXXXXX0"",""minor_dependent"":false}",True
 195,"{""last_name"":""Jain"",""dietary_preference"":""vegetarian""}",False
@@ -210,11 +210,11 @@ record_id,redacted_data_json,is_pii
 209,"{""terraform_state"":""applied"",""resources"":23}",False
 210,"{""name"":""SXXX SXXX"",""email"":""shXXX@personal.com"",""ip_address"":""12XXX94""}",True
 211,"{""ansible_playbook"":""deploy_app"",""tasks"":15}",False
-212,"{""upi_id"":""21XXX43@ybl"",""kyc_level"":""full""}",True
+212,"{""upi_id"":""21XXXX43@ybl"",""kyc_level"":""full""}",True
 213,"{""city"":""Vadodara"",""population"":1670000}",False
 214,"{""phone"":""84XXXXXX12"",""signal_strength"":""-65dBm""}",True
 215,"{""first_name"":""Gaurav"",""t_shirt_size"":""L""}",False
-216,"{""name"":""MXXX DXXX"",""address"":""321 Film City, Mumbai, 400059"",""email"":""maXXX@bollywood.com""}",True
+216,"{""name"":""MXXX DXXX"",""address"":""[REDACTED_ADDRESS]"",""email"":""maXXX@bollywood.com""}",True
 217,"{""docker_compose"":""version_3"",""services"":8}",False
 218,"{""passport"":""IXXXXXX2"",""blood_type"":""A+""}",True
 219,"{""last_name"":""Bansal"",""coffee_preference"":""cappuccino""}",False
@@ -234,7 +234,7 @@ record_id,redacted_data_json,is_pii
 233,"{""elk_stack"":""7.10.2"",""log_retention"":""30_days""}",False
 234,"{""name"":""SXXX NXXX"",""email"":""swXXX@university.ac.in"",""device_id"":""STXXX23""}",True
 235,"{""redis_cache"":""cluster_mode"",""memory_usage"":""2.1GB""}",False
-236,"{""upi_id"":""10XXX32@paytm"",""fraud_alert"":false}",True
+236,"{""upi_id"":""10XXXX32@paytm"",""fraud_alert"":false}",True
 237,"{""city"":""Jodhpur"",""heritage_site"":true}",False
 238,"{""phone"":""86XXXXXX34"",""emergency_contact"":true}",True
 239,"{""first_name"":""Arpit"",""gaming_preference"":""FPS""}",False
@@ -246,7 +246,7 @@ record_id,redacted_data_json,is_pii
 245,"{""fluentd_buffer"":""file"",""buffer_size"":""256MB""}",False
 246,"{""name"":""TXXX GXXX"",""email"":""taXXX@startup.io"",""ip_address"":""49XXX83""}",True
 247,"{""haproxy_backend"":""app_servers"",""active_servers"":6}",False
-248,"{""upi_id"":""09XXX21@okaxis"",""reward_points"":2500}",True
+248,"{""upi_id"":""09XXXX21@okaxis"",""reward_points"":2500}",True
 249,"{""city"":""Agra"",""monument"":""Taj Mahal""}",False
 250,"{""phone"":""77XXXXXX45"",""data_plan"":""unlimited""}",True
 251,"{""first_name"":""Shruti"",""zodiac_sign"":""Leo""}",False
@@ -258,7 +258,7 @@ record_id,redacted_data_json,is_pii
 257,"{""neo4j_database"":""graph_analytics"",""node_count"":50000}",False
 258,"{""name"":""RXXX DXXX"",""phone"":""98XXXXXX10"",""email"":""riXXX@film.in""}",True
 259,"{""apache_kafka"":""2.8.0"",""topics"":25}",False
-260,"{""upi_id"":""98XXX10@ibl"",""standing_instruction"":true}",True
+260,"{""upi_id"":""98XXXX10@ibl"",""standing_instruction"":true}",True
 261,"{""city"":""Guwahati"",""tea_capital"":true}",False
 262,"{""phone"":""61XXXXXX89"",""hotspot_enabled"":true}",True
 263,"{""first_name"":""Tanvi"",""dance_form"":""bharatanatyam""}",False
@@ -270,11 +270,11 @@ record_id,redacted_data_json,is_pii
 269,"{""spark_cluster"":""4_workers"",""memory"":""16GB""}",False
 270,"{""name"":""AXXX BXXX"",""email"":""alXXX@bollywood.in"",""device_type"":""iPhone""}",True
 271,"{""hdfs_replication"":3,""block_size"":""128MB""}",False
-272,"{""upi_id"":""87XXX09@ybl"",""max_transaction_limit"":200000}",True
+272,"{""upi_id"":""87XXXX09@ybl"",""max_transaction_limit"":200000}",True
 273,"{""city"":""Dehradun"",""hill_station"":true}",False
 274,"{""phone"":""95XXXXXX23"",""call_forwarding"":false}",True
 275,"{""first_name"":""Yash"",""favorite_cuisine"":""Italian""}",False
-276,"{""name"":""Deepika Padukone"",""address"":""789 Bandra West, Mumbai, 400050"",""phone"":""89XXXXXX67""}",True
+276,"{""name"":""DXXX PXXX"",""address"":""[REDACTED_ADDRESS]"",""phone"":""89XXXXXX67""}",True
 277,"{""mongodb_replica"":""primary"",""oplog_size"":""2GB""}",False
 278,"{""passport"":""EXXXXXX1"",""chip_enabled"":true}",True
 279,"{""last_name"":""Gupta"",""travel_frequency"":""frequent""}",False
@@ -282,11 +282,11 @@ record_id,redacted_data_json,is_pii
 281,"{""postgresql_version"":""13.4"",""extensions"":""postgis,pg_stat_statements""}",False
 282,"{""name"":""RXXX KXXX"",""email"":""raXXX@movies.com"",""ip_address"":""11XXX05""}",True
 283,"{""consul_cluster"":""3_agents"",""leader_election"":true}",False
-284,"{""upi_id"":""76XXX98@paytm"",""mobile_banking"":true}",True
+284,"{""upi_id"":""76XXXX98@paytm"",""mobile_banking"":true}",True
 285,"{""city"":""Shimla"",""altitude"":""2205m""}",False
 286,"{""phone"":""82XXXXXX90"",""wifi_calling"":true}",True
 287,"{""first_name"":""Ishita"",""language_skills"":""Hindi,English,French""}",False
-288,"{""name"":""HXXX RXXX"",""address"":""321 Juhu Beach, Mumbai, 400049"",""email"":""hrXXX@superstar.in""}",True
+288,"{""name"":""HXXX RXXX"",""address"":""[REDACTED_ADDRESS]"",""email"":""hrXXX@superstar.in""}",True
 289,"{""vault_secrets"":""encrypted"",""policies"":8}",False
 290,"{""passport"":""DXXXXXX9"",""photo_biometric"":true}",True
 291,"{""last_name"":""Saxena"",""workout_routine"":""yoga""}",False
@@ -294,11 +294,11 @@ record_id,redacted_data_json,is_pii
 293,"{""kubernetes_ingress"":""nginx"",""ssl_termination"":true}",False
 294,"{""name"":""KXXX KXXX"",""phone"":""71XXXXXX90"",""email"":""kaXXX@actress.com""}",True
 295,"{""etcd_cluster"":""healthy"",""raft_applied_index"":1000000}",False
-296,"{""upi_id"":""65XXX87@okaxis"",""joint_account"":false}",True
+296,"{""upi_id"":""65XXXX87@okaxis"",""joint_account"":false}",True
 297,"{""city"":""Manali"",""skiing_season"":""winter""}",False
 298,"{""phone"":""97XXXXXX45"",""conference_calling"":true}",True
 299,"{""first_name"":""Naman"",""programming_language"":""Python""}",False
-300,"{""name"":""PXXX CXXX"",""address"":""654 Versova, Mumbai, 400061"",""ip_address"":""59XXX92""}",True
+300,"{""name"":""PXXX CXXX"",""address"":""[REDACTED_ADDRESS]"",""ip_address"":""59XXX92""}",True
 301,"{""istio_mesh"":""enabled"",""sidecar_injection"":true}",False
 302,"{""passport"":""KXXXXXX4"",""rfid_enabled"":true}",True
 303,"{""last_name"":""Tiwari"",""meditation_practice"":""mindfulness""}",False
@@ -306,7 +306,7 @@ record_id,redacted_data_json,is_pii
 305,"{""linkerd_proxy"":""stable-2.11.1"",""success_rate"":99.9}",False
 306,"{""name"":""AXXX KXXX"",""email"":""akXXX@actionhero.in"",""device_id"":""ACXXX23""}",True
 307,"{""opentelemetry"":""enabled"",""traces_per_second"":1000}",False
-308,"{""upi_id"":""54XXX76@ybl"",""credit_card_linked"":true}",True
+308,"{""upi_id"":""54XXXX76@ybl"",""credit_card_linked"":true}",True
 309,"{""city"":""Ooty"",""tea_gardens"":true}",False
 310,"{""phone"":""80XXXXXX78"",""5g_enabled"":true}",True
 311,"{""first_name"":""Sneha"",""fitness_goal"":""weight_loss""}",False
@@ -318,11 +318,11 @@ record_id,redacted_data_json,is_pii
 317,"{""zipkin_spans"":""sampled"",""sampling_rate"":0.1}",False
 318,"{""name"":""AXXX KXXX"",""email"":""aaXXX@perfectionist.com"",""ip_address"":""14XXX43""}",True
 319,"{""flagger_canary"":""progressive"",""success_threshold"":99}",False
-320,"{""upi_id"":""43XXX65@paytm"",""fixed_deposit_linked"":true}",True
+320,"{""upi_id"":""43XXXX65@paytm"",""fixed_deposit_linked"":true}",True
 321,"{""city"":""Nainital"",""lake_city"":true}",False
 322,"{""phone"":""73XXXXXX01"",""volte_enabled"":true}",True
 323,"{""first_name"":""Rajat"",""investment_portfolio"":""balanced""}",False
-324,"{""name"":""SXXX KXXX"",""address"":""123 Mannat, Mumbai, 400050"",""email"":""XXX@kingkhan.in""}",True
+324,"{""name"":""SXXX KXXX"",""address"":""[REDACTED_ADDRESS]"",""email"":""XXX@kingkhan.in""}",True
 325,"{""argo_cd"":""v2.4.0"",""applications"":15}",False
 326,"{""passport"":""AXXXXXX4"",""fast_track_eligible"":true}",True
 327,"{""last_name"":""Verma"",""social_media"":""LinkedIn""}",False
@@ -380,19 +380,19 @@ record_id,redacted_data_json,is_pii
 379,"{""passport"":""PXXXXXX3"",""issue_place"":""Mumbai"",""validity"":""10_years""}",True
 380,"{""name"":""SXXX GXXX"",""phone"":""87XXXXXX09"",""email"":""soXXX@personal.in"",""device_type"":""Android""}",True
 381,"{""aadhar"":""8901XXXX7890"",""biometric_status"":""locked"",""unlock_required"":true}",True
-382,"{""name"":""VXXX SXXX"",""address"":""789 Sector 18, Noida, 201301"",""ip_address"":""20XXX72""}",True
+382,"{""name"":""VXXX SXXX"",""address"":""[REDACTED_ADDRESS]"",""ip_address"":""20XXX72""}",True
 383,"{""phone"":""76XXXXXX98"",""international_code"":""+91"",""verified"":true}",True
 384,"{""upi_id"":""vikash@okaxis"",""transaction_pin"":""set"",""daily_limit"":100000}",False
 385,"{""passport"":""LXXXXXX7"",""photo_updated"":""2024-01-15"",""pages_left"":32}",True
 386,"{""name"":""MXXX SXXX"",""email"":""meXXX@office.com"",""department"":""HR""}",True
 387,"{""aadhar"":""9012XXXX8901"",""mobile_verification"":""pending"",""otp_sent"":true}",True
-388,"{""name"":""Rohit Shetty"",""address"":""123 Andheri West, Mumbai, 400053"",""phone"":""89XXXXXX67""}",True
+388,"{""name"":""RXXX SXXX"",""address"":""[REDACTED_ADDRESS]"",""phone"":""89XXXXXX67""}",True
 389,"{""phone"":""67XXXXXX45"",""sms_service"":""enabled"",""promotional_consent"":false}",True
 390,"{""upi_id"":""rohit789@ybl"",""beneficiary_limit"":20,""recent_transaction"":""2024-01-20""}",False
 391,"{""passport"":""AXXXXXX2"",""emergency_contact_name"":""Priya Shetty"",""relationship"":""spouse""}",True
 392,"{""name"":""KXXX MXXX"",""email"":""kaXXX@actress.in"",""ip_address"":""11XXX38""}",True
 393,"{""aadhar"":""0123XXXX9012"",""demographic_auth"":""success"",""attempt_count"":1}",True
-394,"{""name"":""AXXX DXXX"",""address"":""567 Juhu Scheme, Mumbai, 400049"",""email"":""ajXXX@action.com""}",True
+394,"{""name"":""AXXX DXXX"",""address"":""[REDACTED_ADDRESS]"",""email"":""ajXXX@action.com""}",True
 395,"{""phone"":""92XXXXXX01"",""call_log_consent"":true,""privacy_setting"":""medium""}",True
 396,"{""upi_id"":""ajay@icici"",""merchant_payments"":15,""last_settlement"":""2024-01-19""}",False
 397,"{""passport"":""HXXXXXX3"",""visa_pages"":8,""endorsement_pages"":2}",True
@@ -416,19 +416,19 @@ record_id,redacted_data_json,is_pii
 415,"{""passport"":""RXXXXXX8"",""frequent_traveler"":true,""miles_accumulated"":50000}",True
 416,"{""name"":""AXXX KXXX"",""phone"":""73XXXXXX01"",""email"":""ayXXX@versatile.in""}",True
 417,"{""aadhar"":""4567XXXX3456"",""health_id"":""linked"",""vaccination_status"":""fully_vaccinated""}",True
-418,"{""name"":""BXXX PXXX"",""address"":""789 Khar West, Mumbai, 400052"",""ip_address"":""12XXX05""}",True
+418,"{""name"":""BXXX PXXX"",""address"":""[REDACTED_ADDRESS]"",""ip_address"":""12XXX05""}",True
 419,"{""phone"":""96XXXXXX34"",""network_type"":""4G"",""data_usage"":""15GB_monthly""}",True
 420,"{""upi_id"":""bhumi@kotak"",""savings_goal"":""home_purchase"",""target_amount"":5000000}",False
 421,"{""passport"":""SXXXXXX5"",""digital_copy"":""available"",""qr_code"":""generated""}",True
 422,"{""name"":""RXXX RXXX"",""email"":""raXXX@method.in"",""device_type"":""Samsung""}",True
 423,"{""aadhar"":""5678XXXX4567"",""aadhaar_pay"":""enabled"",""micro_atm"":""registered""}",True
-424,"{""name"":""Kriti Sanon"",""address"":""123 Versova, Mumbai, 400061"",""phone"":""87XXXXXX45""}",True
+424,"{""name"":""KXXX SXXX"",""address"":""[REDACTED_ADDRESS]"",""phone"":""87XXXXXX45""}",True
 425,"{""phone"":""67XXXXXX45"",""backup_sim"":""inactive"",""primary_number"":true}",True
 426,"{""upi_id"":""kriti@yesbank"",""credit_score_check"":""monthly"",""current_score"":785}",False
 427,"{""passport"":""CXXXXXX2"",""biometric_data"":""encrypted"",""facial_recognition"":true}",True
 428,"{""name"":""KXXX AXXX"",""email"":""kaXXX@comedy.in"",""ip_address"":""20XXX74""}",True
 429,"{""aadhar"":""6789XXXX5678"",""consent_manager"":""registered"",""data_sharing"":""limited""}",True
-430,"{""name"":""Ananya Panday"",""address"":""456 Bandra Bandstand, Mumbai, 400050"",""email"":""ananya@gen_z.com""}",False
+430,"{""name"":""AXXX PXXX"",""address"":""[REDACTED_ADDRESS]"",""email"":""ananya@gen_z.com""}",True
 431,"{""phone"":""78XXXXXX56"",""video_calling"":true,""screen_sharing"":""enabled""}",True
 432,"{""upi_id"":""ananya@hdfcbank"",""student_account"":true,""education_loan"":""linked""}",False
 433,"{""passport"":""NXXXXXX9"",""minor_passport"":false,""guardian_details"":""not_applicable""}",True
@@ -446,55 +446,55 @@ record_id,redacted_data_json,is_pii
 445,"{""passport"":""VXXXXXX0"",""diplomatic_immunity"":false,""official_travel"":""business""}",True
 446,"{""name"":""SXXX MXXX"",""email"":""siXXX@romantic.in"",""ip_address"":""59XXX83""}",True
 447,"{""aadhar"":""9012XXXX8901"",""property_registration"":""linked"",""stamp_duty"":""paid""}",True
-448,"{""name"":""SXXX KXXX"",""address"":""654 Lokhandwala, Mumbai, 400053"",""email"":""shXXX@melodious.com""}",True
+448,"{""name"":""SXXX KXXX"",""address"":""[REDACTED_ADDRESS]"",""email"":""shXXX@melodious.com""}",True
 449,"{""phone"":""93XXXXXX12"",""music_streaming"":""premium"",""offline_downloads"":500}",True
 450,"{""upi_id"":""shraddha@pnb"",""concert_tickets"":""auto_book"",""artist_alerts"":true}",False
 451,"{""passport"":""UXXXXXX4"",""artist_visa"":""multi_entry"",""performance_permit"":true}",True
 452,"{""name"":""VXXX SXXX"",""phone"":""84XXXXXX12"",""email"":""vaXXX@comedy.in""}",True
 453,"{""aadhar"":""0123XXXX9012"",""comedy_club"":""member"",""performance_rights"":""registered""}",True
-454,"{""name"":""JXXX KXXX"",""address"":""987 Lokhandwala Complex, Mumbai, 400053"",""ip_address"":""20XXX27""}",True
+454,"{""name"":""JXXX KXXX"",""address"":""[REDACTED_ADDRESS]"",""ip_address"":""20XXX27""}",True
 455,"{""phone"":""75XXXXXX23"",""fashion_alerts"":true,""brand_notifications"":""selective""}",True
 456,"{""upi_id"":""janhvi@canara"",""designer_payments"":""frequent"",""luxury_limit"":1000000}",False
 457,"{""passport"":""FXXXXXX1"",""fashion_week"":""participant"",""designer_collaboration"":true}",True
 458,"{""name"":""AXXX RXXX"",""email"":""arXXX@intense.in"",""device_type"":""OnePlus""}",True
 459,"{""aadhar"":""1234XXXX0123"",""medical_college"":""alumni"",""practicing_license"":""valid""}",True
-460,"{""name"":""Rashmika Mandanna"",""address"":""234 Banjara Hills, Hyderabad, 500034"",""phone"":""96XXXXXX34""}",True
+460,"{""name"":""RXXX MXXX"",""address"":""[REDACTED_ADDRESS]"",""phone"":""96XXXXXX34""}",True
 461,"{""phone"":""68XXXXXX56"",""regional_content"":""Telugu"",""dubbing_preference"":""original""}",True
 462,"{""upi_id"":""rashmika@sbi"",""south_cinema"":""promotions"",""fan_engagement"":""high""}",False
 463,"{""passport"":""GXXXXXX2"",""regional_cinema"":""ambassador"",""cultural_exchange"":true}",True
 464,"{""name"":""AXXX AXXX"",""email"":""alXXX@stylish.in"",""ip_address"":""14XXX56""}",True
 465,"{""aadhar"":""2345XXXX1234"",""dance_academy"":""owner"",""choreography_rights"":""exclusive""}",True
-466,"{""name"":""SXXX AXXX"",""address"":""567 Film Nagar, Hyderabad, 500096"",""email"":""saXXX@versatile.in""}",True
+466,"{""name"":""SXXX AXXX"",""address"":""[REDACTED_ADDRESS]"",""email"":""saXXX@versatile.in""}",True
 467,"{""phone"":""89XXXXXX67"",""charity_work"":""active"",""foundation_calls"":""priority""}",True
 468,"{""upi_id"":""samantha@hdfc"",""donation_auto"":""monthly"",""cause"":""women_empowerment""}",False
 469,"{""passport"":""IXXXXXX5"",""humanitarian_visa"":""active"",""ngo_collaboration"":true}",True
 470,"{""name"":""RXXX CXXX"",""phone"":""72XXXXXX90"",""email"":""XXX@megastar.in""}",True
 471,"{""aadhar"":""3456XXXX2345"",""horse_racing"":""license"",""stable_owner"":true}",True
-472,"{""name"":""JXXX NXXX"",""address"":""890 Jubilee Hills, Hyderabad, 500033"",""ip_address"":""12XXX94""}",True
+472,"{""name"":""JXXX NXXX"",""address"":""[REDACTED_ADDRESS]"",""ip_address"":""12XXX94""}",True
 473,"{""phone"":""83XXXXXX01"",""political_updates"":""subscribed"",""rally_notifications"":true}",True
 474,"{""upi_id"":""ntr@andhra"",""political_donations"":""transparent"",""party_fund"":""contributor""}",False
 475,"{""passport"":""JXXXXXX6"",""political_visa"":""diplomatic"",""state_visits"":""official""}",True
 476,"{""name"":""MXXX BXXX"",""email"":""maXXX@superstar.in"",""device_id"":""PRXXX23""}",True
 477,"{""aadhar"":""4567XXXX3456"",""production_house"":""owner"",""film_financing"":""independent""}",True
-478,"{""name"":""Prabhas Raju"",""address"":""123 Banjara Hills, Hyderabad, 500034"",""phone"":""94XXXXXX12""}",True
+478,"{""name"":""PXXX RXXX"",""address"":""[REDACTED_ADDRESS]"",""phone"":""94XXXXXX12""}",True
 479,"{""phone"":""76XXXXXX34"",""pan_india"":""stardom"",""multilingual_alerts"":true}",True
 480,"{""upi_id"":""prabhas@federal"",""movie_budget"":""international"",""currency"":""multi""}",False
 481,"{""passport"":""BXXXXXX9"",""international_filming"":""permitted"",""visa_facilitation"":true}",True
 482,"{""name"":""RXXX DXXX"",""email"":""raXXX@versatile.in"",""ip_address"":""20XXX29""}",True
 483,"{""aadhar"":""5678XXXX4567"",""visual_effects"":""studio_owner"",""technology_innovator"":true}",True
-484,"{""name"":""AXXX SXXX"",""address"":""456 Filmnagar, Hyderabad, 500096"",""email"":""anXXX@baahubali.in""}",True
+484,"{""name"":""AXXX SXXX"",""address"":""[REDACTED_ADDRESS]"",""email"":""anXXX@baahubali.in""}",True
 485,"{""phone"":""85XXXXXX23"",""fitness_regime"":""strict"",""trainer_calls"":""daily""}",True
 486,"{""upi_id"":""anushka@karnataka"",""fitness_equipment"":""premium"",""health_monitoring"":""advanced""}",False
 487,"{""passport"":""EXXXXXX0"",""fitness_travel"":""wellness"",""spa_treatments"":""international""}",True
 488,"{""name"":""TXXX BXXX"",""phone"":""97XXXXXX45"",""email"":""taXXX@glamorous.in""}",True
 489,"{""aadhar"":""6789XXXX5678"",""brand_ambassador"":""multiple"",""endorsement_value"":""premium""}",True
-490,"{""name"":""KXXX AXXX"",""address"":""789 Banjara Hills, Hyderabad, 500034"",""ip_address"":""11XXX81""}",True
+490,"{""name"":""KXXX AXXX"",""address"":""[REDACTED_ADDRESS]"",""ip_address"":""11XXX81""}",True
 491,"{""phone"":""61XXXXXX89"",""punjabi_connection"":""cultural"",""regional_films"":""multilingual""}",True
 492,"{""upi_id"":""kajal@punjab"",""cultural_events"":""sponsor"",""heritage_preservation"":""donor""}",False
 493,"{""passport"":""LXXXXXX3"",""cultural_ambassador"":""official"",""international_events"":""participant""}",True
 494,"{""name"":""RXXX SXXX"",""email"":""raXXX@fitness.in"",""device_type"":""iPhone_Pro""}",True
 495,"{""aadhar"":""7890XXXX6789"",""fitness_influencer"":""certified"",""wellness_brand"":""founder""}",True
-496,"{""name"":""Pooja Hegde"",""address"":""321 Film City, Hyderabad, 500096"",""phone"":""82XXXXXX90""}",True
+496,"{""name"":""PXXX HXXX"",""address"":""[REDACTED_ADDRESS]"",""phone"":""82XXXXXX90""}",True
 497,"{""phone"":""78XXXXXX56"",""dance_choreography"":""skilled"",""performance_rights"":""exclusive""}",True
 498,"{""upi_id"":""pooja@maharashtra"",""dance_academy"":""investment"",""cultural_promotion"":""active""}",False
 499,"{""passport"":""MXXXXXX4"",""dance_festivals"":""judge"",""international_recognition"":true}",True
