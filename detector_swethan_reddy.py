@@ -9,7 +9,12 @@ from typing import Dict, List, Tuple, Any
 import argparse
 
 class PIIDetector:
+    """
+    Advanced PII Detection and Redaction System
     
+    Implements both standalone and combinatorial PII detection with
+    high accuracy and minimal false positives.
+    """
     
     def __init__(self):
         # Regex patterns for standalone PII
@@ -22,7 +27,7 @@ class PIIDetector:
             'ip_address': re.compile(r'\b(?:\d{1,3}\.){3}\d{1,3}\b'),
         }
         
-        # Address pattern 
+        # Address pattern (more comprehensive)
         self.address_pattern = re.compile(
             r'.*(?:street|road|avenue|lane|drive|place|court|way|circle|'
             r'block|flat|apartment|house|building).*\d{6}.*',
@@ -61,6 +66,7 @@ class PIIDetector:
         }
 
     def is_standalone_pii(self, field: str, value: str) -> bool:
+        """Check if a field-value pair is standalone PII"""
         if not value or not isinstance(value, str):
             return False
             
@@ -93,9 +99,10 @@ class PIIDetector:
 
     def detect_combinatorial_pii(self, data: Dict[str, Any]) -> Tuple[bool, List[str]]:
         """
-        Detect combinatorial PII (requires 2+ fields from combinatorial list)
+        Detect combinatorial PII (requires 2+ different types from combinatorial list)
         Returns (is_pii, list_of_pii_fields)
         """
+        pii_types = set()
         pii_fields = []
         
         for field, value in data.items():
@@ -104,80 +111,61 @@ class PIIDetector:
                 
             value = str(value).strip()
             
-            # Name detection (full name with first + last)
+            # Full name (counts as one type)
             if field == 'name' and self.full_name_pattern.match(value):
+                pii_types.add('name')
                 pii_fields.append(field)
                 
-            # First name (only if last_name also exists)
-            elif field == 'first_name' and 'last_name' in data and data.get('last_name'):
-                pii_fields.append(field)
+            # First name + Last name (together count as one type)
+            elif field in ['first_name', 'last_name']:
+                if 'first_name' in data and 'last_name' in data:
+                    if data.get('first_name') and data.get('last_name'):
+                        pii_types.add('name')
+                        pii_fields.append(field)
                 
-            # Last name (only if first_name also exists)  
-            elif field == 'last_name' and 'first_name' in data and data.get('first_name'):
-                pii_fields.append(field)
-                
-            # Email address
+            # Email address (one type)
             elif field == 'email' and self.patterns['email'].match(value):
+                pii_types.add('email')
                 pii_fields.append(field)
                 
-            # Physical address (comprehensive check)
+            # Physical address (one type)
             elif field == 'address' and len(value) > 10:
-                # Look for street indicators + pin code pattern
-                if self.address_pattern.search(value) or any(
-                    keyword in value.lower() 
-                    for keyword in ['street', 'road', 'avenue', 'flat', 'house', 'building', 'mg road']
-                ):
+                # Enhanced address detection
+                address_indicators = ['street', 'road', 'avenue', 'flat', 'house', 'building', 'mg road', 'block']
+                has_address_indicator = any(indicator in value.lower() for indicator in address_indicators)
+                has_pincode = bool(re.search(r'\b\d{6}\b', value))
+                
+                if has_address_indicator or has_pincode:
+                    pii_types.add('address')
                     pii_fields.append(field)
                     
-            # City (only if pin_code also exists)
-            elif field == 'city' and 'pin_code' in data and data.get('pin_code'):
-                pii_fields.append(field)
-                
-            # Pin code (only if city also exists)
-            elif field == 'pin_code' and 'city' in data and data.get('city'):
-                pii_fields.append(field)
+            # City + Pin code (together count as one type but need both present)
+            elif field in ['city', 'pin_code']:
+                if 'city' in data and 'pin_code' in data:
+                    city_val = data.get('city')
+                    pin_val = data.get('pin_code')
+                    if city_val and pin_val and str(city_val).strip() and str(pin_val).strip():
+                        pii_types.add('location')
+                        pii_fields.extend(['city', 'pin_code'])
                         
-            # Device ID / IP Address (only when tied to user context)
+            # Device ID / IP Address (only with user context, one type)
             elif field in ['device_id', 'ip_address']:
-                # Check if there's user context (name, email, or phone)
                 user_context_fields = ['name', 'email', 'phone', 'first_name', 'last_name']
-                has_user_context = any(
-                    data.get(uf) for uf in user_context_fields
-                )
+                has_user_context = any(data.get(uf) for uf in user_context_fields)
                 if has_user_context:
+                    pii_types.add('device_info')
                     pii_fields.append(field)
         
-        # Remove duplicates
-        unique_pii_fields = list(set(pii_fields))
+        # Remove duplicates from pii_fields
+        pii_fields = list(set(pii_fields))
         
-        # Count combinations properly
-        combinatorial_count = 0
-        
-        # Full name counts as 1
-        if 'name' in unique_pii_fields:
-            combinatorial_count += 1
+        # Special case: if we only have city+pin_code, that's still valid combinatorial PII
+        if len(pii_types) == 1 and 'location' in pii_types:
+            # city + pin_code together are considered combinatorial PII
+            return True, pii_fields
             
-        # First name + last name together count as 1
-        if 'first_name' in unique_pii_fields and 'last_name' in unique_pii_fields:
-            combinatorial_count += 1
-            
-        # Email counts as 1
-        if 'email' in unique_pii_fields:
-            combinatorial_count += 1
-            
-        # Address counts as 1
-        if 'address' in unique_pii_fields:
-            combinatorial_count += 1
-            
-        # City + pin_code together count as 1
-        if 'city' in unique_pii_fields and 'pin_code' in unique_pii_fields:
-            combinatorial_count += 1
-            
-        # Device/IP with user context counts as 1
-        if any(field in unique_pii_fields for field in ['device_id', 'ip_address']):
-            combinatorial_count += 1
-            
-        return combinatorial_count >= 2, unique_pii_fields
+        # Need at least 2 different types of combinatorial PII
+        return len(pii_types) >= 2, pii_fields
 
     def redact_value(self, field: str, value: str) -> str:
         """Apply appropriate redaction based on field type and value"""
@@ -203,14 +191,16 @@ class PIIDetector:
         # UPI ID redaction
         if field == 'upi_id' and '@' in value:
             parts = value.split('@')
-            if len(parts[0]) > 4:
-                return f"{parts[0][:2]}XXX{parts[0][-2:]}@{parts[1]}"
+            username = parts[0]
+            domain = parts[1]
+            if len(username) > 4:
+                return f"{username[:2]}XXXX{username[-2:]}@{domain}"
             else:
-                return f"XXX@{parts[1]}"
+                return f"XXX@{domain}"
                 
         # Email redaction
         if field == 'email' and self.patterns['email'].match(value):
-            local, domain = value.split('@')
+            local, domain = value.split('@', 1)
             if len(local) > 3:
                 return f"{local[:2]}XXX@{domain}"
             else:
@@ -231,6 +221,19 @@ class PIIDetector:
             return "[REDACTED_ADDRESS]"
             
         # Default redaction for other PII
+        if field in ['city', 'pin_code']:
+            if len(value) > 2:
+                return f"{value[0]}XXX"
+            else:
+                return "XXX"
+                
+        if field in ['device_id', 'ip_address']:
+            if len(value) > 4:
+                return f"{value[:2]}XXX{value[-2:]}"
+            else:
+                return "XXX"
+                
+        # Generic fallback
         if len(value) > 4:
             return f"{value[:2]}XXX{value[-2:]}"
         else:
@@ -255,7 +258,9 @@ class PIIDetector:
             is_pii = True
             for field in pii_fields:
                 if field in redacted_data:
-                    redacted_data[field] = self.redact_value(field, str(data[field]))
+                    # Don't double-redact standalone PII fields
+                    if not any(self.is_standalone_pii(f, data.get(f)) for f in [field]):
+                        redacted_data[field] = self.redact_value(field, str(data[field]))
                     
         return redacted_data, is_pii
 
