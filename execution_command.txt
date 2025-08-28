@@ -1,0 +1,1 @@
+python3 ./detector_swethan_reddy.py /Users/swethanreddy/Desktop/ISCP/iscp_pii_dataset_-_Sheet1.csv
